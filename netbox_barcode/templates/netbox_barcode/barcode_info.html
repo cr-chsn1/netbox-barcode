@@ -46,7 +46,7 @@
 {% block title %}Barcode Info{% endblock %}
 {% block header %}
 <div id="bar-title">
-  <h2>Информация по баркоду</h2>
+  <h2>Barcode Information</h2>
   <a href="javascript:void(0);" onclick="printPageArea('printableArea')" class="btn btn-green">Print</a>
   <a href="javascript:void(0);" onclick="printPageArea('printableAreaNoCompany')" class="btn btn-green">Print w/o Company Info</a>
 </div>
@@ -59,19 +59,19 @@
       <tr>
         <td>
         {% if partnumber %}
-        <p class="bar-text"><span>Артикул производителя:</span> {{ partnumber }} </p>
+        <p class="bar-text"><span>Part number:</span> {{ partnumber }} </p>
         <img src="{{ barcode_partnumber.url }}" alt='barcode_partnumber'>
         {% endif %}
         {% if sn %}
-        <p class="bar-text"><span>Серийный номер:</span> {{ sn }} </p>
+        <p class="bar-text"><span>Serial number:</span> {{ sn }} </p>
         <img src="{{ barcode_sn.url }}" alt='barcode_sn'>
         {% endif %}
         {% if stock_number %}
-        <p class="bar-text"><span>Складской номер:</span> {{ stock_number }} </p>
+        <p class="bar-text"><span>Stock number:</span> {{ stock_number }} </p>
         <img src="{{ barcode_stocknumber.url }}" alt='barcode_stocknumber'>
         {% endif %}
-        <p class="bar-text"><span>Кол-во:</span> {{device_count}} </p>
-        <p class="bar-text"><span>Дата проверки:</span> {% now "SHORT_DATE_FORMAT" %}</p>
+        <p class="bar-text"><span>Quantity:</span> {{device_count}} </p>
+        <p class="bar-text"><span>Date of verification:</span> {% now "SHORT_DATE_FORMAT" %}</p>
       </td>
     </tr>
     </table>
